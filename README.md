@@ -33,6 +33,12 @@ Below are some common arguments. See `lt --help` for additional arguments
 * `--subdomain` request a named subdomain on the localtunnel server (default is random characters)
 * `--local-host` proxy to a hostname other than localhost
 
+You may also specify arguments via env variables.  E.x.
+
+```
+PORT=3000 lt
+```
+
 ## API ##
 
 The localtunnel client is also usable through an API (for test integration, automation, etc)
@@ -68,6 +74,7 @@ The `tunnel` instance returned to your callback emits the following events
 
 |event|args|description|
 |----|----|----|
+|request|info|fires when a request is processed by the tunnel, contains _method_ and _path_ fields|
 |error|err|fires when an error happens on the tunnel|
 |close||fires when the tunnel has closed|
 
@@ -82,6 +89,8 @@ The `tunnel` instance has the following methods
 Clients in other languages
 
 *go* [gotunnelme](https://github.com/NoahShen/gotunnelme)
+
+*go* [go-localtunnel](https://github.com/localtunnel/go-localtunnel)
 
 ## server ##
 
